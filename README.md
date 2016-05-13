@@ -3,19 +3,27 @@ FraudGuard Example
 
 - Start by creating an account at https://tools.snorestopper.eu/fraudguard/web
 - Add an API key in FraudGuard
+- Clone this repository git clone https://github.com/hollodk/fraudguard.git
 - Add key in app/config/parameters.yml
-
+- Make var/ writeable to everyone
+- Now continue to the [Tests] section to see how things are working
 
 Tests
 -----
 
 Generate page views
+~~~~~~~~~~~~~~~~~~~
+
 http://localhost/fraudguard/web/
 
 Generate create_order
+~~~~~~~~~~~~~~~~~~~~~
+
 http://localhost/fraudguard/web/ok
 
 Callback url
+~~~~~~~~~~~~
+
 http://localhost/fraudguard/web/callback
 
 
@@ -43,7 +51,5 @@ Explanation of response
 In the callback you will get one of three responses:
 
 - accepted, means the order seems good.
-
 - hold, means we advise you to check up on this order, there seems to be some fishy in the order.
-
 - rejected, means it seems like a frauded order.
