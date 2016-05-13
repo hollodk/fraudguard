@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+<script type="text/javascript">
+    var _fg = window._fg = window._fg || {};
+    var _purchase = {
+        device: {
+            ip: '{{ ip }}',
+            session_id: '{{ session_id }}',
+            user_agent: '{{ user_agent }}',
+            accept_language: '{{ accept_language }}'
+        },
+        event: {
+            transaction_id: '{{ order.id }}',
+            shop_id: '{{ shop_name }}',
+            time: '{{ order.createdAt|date('c') }}',
+            type: 'create_order'
+        },
+        account: {
+            user_id: '{{ order.user_id }}',
+            email: '{{ order.email }}'
+        },
+        billing: {
+            first_name: '{{ order.firstname }}',
+            last_name: '{{ order.lastname }}',
+            address: '{{ order.address }}',
+            city: '{{ order.city }}',
+            country: '{{ order.country }}',
+            postal: '{{ order.zip }}'
+        },
+        shipping: {
+            first_name: '{{ order.shipping.firstname }}',
+            last_name: '{{ order.shipping.lastname }}',
+            address: '{{ order.shipping.address }}',
+            city: '{{ order.shipping.city }}',
+            country: '{{ order.shipping.country }}',
+            postal: '{{ order.shipping.zip }}',
+            delivery_speed: '{{ order.shipping_method }}'
+        },
+        order: {
+            amount: '{{ order.amount }}',
+            currency: '{{ order.currency }}'
+        },
+        shopping_cart: [
+        {% for item in order.items %}
+        {
+            category: '{{ item.category }}',
+            item_id: '{{ item.product_id }}',
+            quantity: {{ item.quantity }},
+            price: {{ item.unit_price }}
+        }
+        {% if loop.last == false %},{% endif %}
+        {% endfor %}
+        ]
+    }
+
+    _fg['_setAccountId'] = '{{ api_key }}';
+    _fg['_setUserId'] = '{{ order.user_id }}';
+    _fg['_setSessionId'] = '{{ session_id }}';
+    _fg['_setTrack'] = 'create_order';
+    _fg['_setTransaction'] = _purchase;
+
+    (function(d, s, id) {
+        var e, f = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        e = d.createElement(s); e.id = id;
+        e.src = '//tools.snorestopper.eu/fraudguard/web/snippet/s.js',
+        f.parentNode.insertBefore(e, f);
+    })(document, 'script', 'fg-beacon');
+</script>
+{% endblock %}
+
+{% block body %}
+This is what has to be on all pages.
+{% endblock %}
