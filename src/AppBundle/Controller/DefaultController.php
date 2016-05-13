@@ -5,7 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller
 {
@@ -82,6 +82,11 @@ class DefaultController extends Controller
      */
     public function callbackAction(Request $request)
     {
-        return new Response('ok');
+        $res = new \StdClass();
+        $res->score = $request->get('score');
+        $res->transaction_id = $request->get('transaction_id');
+        $res->status = 'ok';
+
+        return new JsonResponse($res);
     }
 }
