@@ -1,9 +1,10 @@
 FraudGuard Example
 ==================
 
-- Start by creating an account at tools.snorestopper.eu/fraudguard/web
-- Add an API key
-- Add key in src/AppBundle/Controller/DefaultController.php
+- Start by creating an account at https://tools.snorestopper.eu/fraudguard/web
+- Add an API key in FraudGuard
+- Add key in app/config/parameters.yml
+
 
 Tests
 -----
@@ -16,3 +17,33 @@ http://localhost/fraudguard/web/ok
 
 Callback url
 http://localhost/fraudguard/web/callback
+
+
+FraudGuard Interface
+--------------------
+
+Now check the FraudGuard interface too see your results, check out the Develop -> Api Log to see all the requests.
+
+To test the callback, try and add a new action and just and the url for your callback, and click [Test], now you can see the response in the web interface response panel.
+
+
+About This Module
+-----------------
+
+All the custom php code for this example project is located in src/AppBundle/Controller/DefaultController.php.
+
+All the custom javascript and html is located in app/Resources/view/default/.
+
+That is basically everything you need to know to get started, here you can see how to use this module for your own project.
+
+
+Explanation of response
+-----------------------
+
+In the callback you will get one of three responses:
+
+- accepted, means the order seems good.
+
+- hold, means we advise you to check up on this order, there seems to be some fishy in the order.
+
+- rejected, means it seems like a frauded order.
