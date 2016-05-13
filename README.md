@@ -11,20 +11,11 @@ FraudGuard Example
 Tests
 -----
 
-Generate page views
-~~~~~~~~~~~~~~~~~~~
+When you want to generate page views, use this url http://localhost/fraudguard/web/.
 
-http://localhost/fraudguard/web/
+When you want to generate a new order, use this url http://localhost/fraudguard/web/ok.
 
-Generate create_order
-~~~~~~~~~~~~~~~~~~~~~
-
-http://localhost/fraudguard/web/ok
-
-Callback url
-~~~~~~~~~~~~
-
-http://localhost/fraudguard/web/callback
+In the callback code you can access data like this http://localhost/fraudguard/web/callback.
 
 
 FraudGuard Interface
