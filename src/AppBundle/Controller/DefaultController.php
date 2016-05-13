@@ -87,6 +87,20 @@ class DefaultController extends Controller
         $res->transaction_id = $request->get('transaction_id');
         $res->status = 'ok';
 
+        switch ($request->get('task')) {
+        case 'accepted':
+            // accept the order
+            break;
+
+        case 'hold':
+            // put order on hold
+            break;
+
+        case 'rejected':
+            // order should be rejected
+            break;
+        }
+
         return new JsonResponse($res);
     }
 }
