@@ -4,6 +4,8 @@ FraudGuard Example
 - Start by creating an account at https://tools.snorestopper.eu/fraudguard/web
 - Add an API key in FraudGuard
 - Clone this repository git clone https://github.com/hollodk/fraudguard.git
+- Make sure you have composer installed http://www.getcomposer.org
+- Now install vendors, cd fraudguard && ./composer.phar install
 - Add key in app/config/parameters.yml
 - Make var/ writeable to everyone
 - Now continue to the [Tests] section to see how things are working
