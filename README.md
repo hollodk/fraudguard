@@ -33,7 +33,7 @@ About This Module
 
 All the custom php code for this example project is located in [src/AppBundle/Controller/DefaultController.php](src/AppBundle/Controller/DefaultController.php).
 
-All the custom javascript and html is located in [app/Resources/view/default/](app/Resources/view/default).
+All the custom javascript and html is located in [app/Resources/views/default](app/Resources/views/default).
 
 That is basically everything you need to know to get started, here you can see how to use this module for your own project.
 
