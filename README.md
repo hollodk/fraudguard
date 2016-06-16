@@ -43,6 +43,6 @@ Explanation of response
 
 In the callback you will get one of three responses:
 
-- accepted, means the order seems good.
+- accept, means the order seems good.
 - hold, means we advise you to check up on this order, there seems to be some fishy in the order.
-- rejected, means it seems like a frauded order.
+- reject, means it seems like a frauded order.
