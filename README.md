@@ -1,7 +1,7 @@
 FraudGuard Example
 ==================
 
-- Start by creating an account at https://tools.snorestopper.eu/fraudguard/web
+- Start by creating an account at https://fraud.aletia.io
 - Add an API key in FraudGuard
 - Clone this repository git clone https://github.com/hollodk/fraudguard.git
 - Make sure you have composer installed http://www.getcomposer.org
@@ -31,7 +31,7 @@ To test the callback, try and add a new action and just and the url for your cal
 About This Module
 -----------------
 
-All the custom php code for this example project is located in src/AppBundle/Controller/DefaultController.php.
+All the custom php code for this example project is located in [src/AppBundle/Controller/DefaultController.php](src/AppBundle/Controller/DefaultController.php).
 
 All the custom javascript and html is located in app/Resources/view/default/.
 
